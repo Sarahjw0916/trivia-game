@@ -96,24 +96,8 @@ var triviaQuestions = [
     answer: 3
   }
 ];
+console.log(triviaQuestions);
 
-var gifArray = [
-  "question1",
-  "question2",
-  "question3",
-  "question4",
-  "question5",
-  "question6",
-  "question7",
-  "question8",
-  "question9",
-  "question10",
-  "question11",
-  "question12",
-  "question13",
-  "question14",
-  "question15"
-];
 var currentQuestion;
 var correctAnswer;
 var incorrectAnswer;
@@ -123,8 +107,8 @@ var time;
 var answered;
 var userSelect;
 var messages = {
-  correct: "Yes, that's right!",
-  incorrect: "No, that's not it.",
+  correct: "Correct!",
+  incorrect: "Incorrect...",
   endTime: "Out of time!",
   finished: "Alright! Let's see how well you did."
 };
@@ -207,12 +191,7 @@ function answerPage() {
     triviaQuestions[currentQuestion].answerList[
       triviaQuestions[currentQuestion].answer
     ];
-  var rightAnswerIndex = triviaQuestions[currentQuestion].answer;
-  $("#gif").html(
-    '<img src = "assets/images/' +
-      gifArray[currentQuestion] +
-      '.gif" width = "400px">'
-  );
+
   //checks to see correct, incorrect, or unanswered
   if (userSelect == rightAnswerIndex && answered == true) {
     correctAnswer++;
